@@ -1,4 +1,4 @@
-import { FETCHING_LIST_START, FETCHING_LIST_SUCCESS, FETCHING_LIST_FAIL, FETCHING_POKE_START, FETCHING_POKE_SUCCESS, FETCHING_POKE_FAIL, SELECT_POKE } from "../action/pokeActions"
+import { FETCHING_LIST_START, FETCHING_LIST_SUCCESS, FETCHING_LIST_FAIL, FETCHING_POKE_START, FETCHING_POKE_SUCCESS, FETCHING_POKE_FAIL, SELECT_POKE, ADD_BUILT } from "../action/pokeActions"
 
 const initialState = {
     selectedPokeUrl: '',
@@ -12,7 +12,6 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    console.log(state)
     switch (action.type){
         case FETCHING_LIST_START:
             return ({
@@ -54,6 +53,11 @@ const reducer = (state = initialState, action) => {
             return ({
                 ...state,
                 selectedPokeUrl: action.payload
+            })
+        case ADD_BUILT:
+            return ({
+                ...state,
+                builtPoke: [...state.builtPoke, action.payload]
             })
 
         default:
