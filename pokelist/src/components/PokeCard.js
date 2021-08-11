@@ -33,7 +33,7 @@ function PokeCard (props) {
     }
 
     return (
-        <div className='poke-card' onClick={handleClick}>
+        <div className={props.selectedPokeUrl === url ? 'poke-card selected' : 'poke-card'} onClick={handleClick}>
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
             <h4>{pokemon.name}</h4>
             <p>Type: {pokemon.types.map((type, i) => {return <span key={i}>{type.type.name} </span>})}</p>
@@ -41,4 +41,10 @@ function PokeCard (props) {
     )
 }
 
-export default connect(null, { selectPoke })(PokeCard)
+function mapStateToProps (state){
+    return ({
+        selectedPokeUrl: state.selectedPokeUrl
+    })
+}
+
+export default connect(mapStateToProps, { selectPoke })(PokeCard)

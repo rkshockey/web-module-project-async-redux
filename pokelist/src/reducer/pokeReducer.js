@@ -2,26 +2,17 @@ import { FETCHING_LIST_START, FETCHING_LIST_SUCCESS, FETCHING_LIST_FAIL, FETCHIN
 
 const initialState = {
     selectedPokeUrl: '',
-    selectedPoke: null,
+    selectedPoke: '',
     isCallingPoke: false,
     errorPoke: '',
     builtPoke: [],
-    pokeValues: {
-        name: '',
-        level: 1,
-        hpIV: 0,
-        attIV: 0,
-        defIV: 0,
-        spAttIV: 0,
-        spDefIV: 0,
-        speedIV: 0
-    },
     pokeList: [{name: null, url: null}],
     isCallingList: false,
     errorList: ''
 }
 
 const reducer = (state = initialState, action) => {
+    console.log(state)
     switch (action.type){
         case FETCHING_LIST_START:
             return ({

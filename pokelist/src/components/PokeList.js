@@ -11,15 +11,19 @@ function PokeList (props) {
         props.fetchList()
     }, [])
 
-    useEffect(() => {
+    function handleClick (e){
+        e.preventDefault()
         props.fetchPoke(props.selectedPokeUrl)
-    }, [props.selectedPokeUrl])
+    }
 
     return (
-        <div className='poke-list'>
-            {props.isCallingList ? <p>Please wait while we fetch your data!</p> :
-            props.errorList === '' ? props.pokeList.map((poke, i) => <PokeCard url={poke.url} key={i} />) : 
-            <div>We've encountered an error: {props.errorList}</div> }
+        <div className='box'>
+            <button onClick={handleClick}>FETCH SELECTED POKEMON</button>
+            <div className='poke-list'>
+                {props.isCallingList ? <p>Please wait while we fetch your data!</p> :
+                props.errorList === '' ? props.pokeList.map((poke, i) => <PokeCard url={poke.url} key={i} />) : 
+                <div>We've encountered an error: {props.errorList}</div> }
+            </div>
         </div>
     )
 }
