@@ -1,8 +1,6 @@
 import React from 'react'
 
 function YourPoke (props) {
-    console.log(props.poke)
-
     return (<div className='your-poke-card'>
         <h3>{props.poke.name}, Level {props.poke.level}</h3>
         <img src={props.poke.sprite} alt={props.poke.name} />
