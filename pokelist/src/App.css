@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.poke-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2%;
+}
+
+.poke-card {
+  width: 200px;
+  margin: 1%;
+  border-radius: 10%;
+  border: 3px solid gold;
+}
+
+.selected {
+  border: 3px solid red;
+  background: green;
+}
+
+.build-poke {
+  width: 600px;
+  border: 3px solid gold;
+  border-radius: 10%;
+  margin: auto;
+}
+
+.make-pokemon {
+  width: 20%;
+  border: 2px solid black;
+  padding: 1%;
+  border-radius: 5%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.container {
+  margin: 2%;
+}
+
+.your-pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.your-poke-card {
+  width: 350px;
+  border: 3px solid green;
+  border-radius: 10%;
+}
